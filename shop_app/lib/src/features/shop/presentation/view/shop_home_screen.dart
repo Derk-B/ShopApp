@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/src/features/shop/presentation/blocs/shop_home_screen/shop_home_screen_bloc.dart';
-import 'package:shop_app/src/features/shop/presentation/view/shop_items_list.dart';
+import 'package:shop_app/src/features/shop/presentation/view/widgets/shop_items_list.dart';
+import 'package:shop_app/src/shared/domain/pages/error_screen.dart';
 
 class ShopHomeScreen extends StatefulWidget {
   const ShopHomeScreen({super.key});
@@ -14,9 +15,7 @@ class _ShopHomeScreenState extends State<ShopHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-      ),
+      appBar: AppBar(),
       body: MultiBlocProvider(
         providers: [
           BlocProvider(
@@ -34,7 +33,7 @@ class _ShopHomeScreenState extends State<ShopHomeScreen> {
             if (state is ShopHomeScreenLoaded) {
               return ShopItemsList(items: state.shopItems);
             } else {
-              return const Text("Error!");
+              return const ErrorScreen();
             }
           },
         ),
