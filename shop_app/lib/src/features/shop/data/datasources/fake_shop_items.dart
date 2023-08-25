@@ -16,7 +16,8 @@ class FakeShopItemsDatasource {
       const ShopItemDTO(
           id: "3",
           title: "Item name",
-          description: "A description of this item",
+          description:
+              "A description of this itemA description of this itemA description of this itemA description of this item",
           price: 19.99),
     ]);
   }

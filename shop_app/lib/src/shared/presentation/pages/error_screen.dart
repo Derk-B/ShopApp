@@ -13,8 +13,10 @@ class ErrorScreen extends StatelessWidget {
           children: [
             Text(
               "Something went wrong!",
-              style: Theme.of(context).textTheme.titleLarge,
+              style: Theme.of(context).textTheme.displayMedium,
+              textAlign: TextAlign.center,
             ),
+            const SizedBox(height: 64.0),
             const Text("Reload the app, otherwise contact the company"),
           ],
         ),
