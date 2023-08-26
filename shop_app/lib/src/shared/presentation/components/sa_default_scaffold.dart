@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/custom_imports/app_localizations.dart';
 import 'package:shop_app/src/features/contact/domain/presentation/views/contact_screen.dart';
 import 'package:shop_app/src/features/shop/presentation/view/shop_home_screen.dart';
 
@@ -46,7 +47,7 @@ class SADefaultScaffold extends StatelessWidget {
                   return const ShopHomeScreen();
                 }));
               },
-              child: const Text("Shop")),
+              child: Text(AppLocalizations.of(context)!.navigation_link_shop)),
           TextButton(
               onPressed: () {
                 Navigator.of(context)
@@ -54,7 +55,8 @@ class SADefaultScaffold extends StatelessWidget {
                   return const ContactScreen();
                 }));
               },
-              child: const Text("Contact")),
+              child:
+                  Text(AppLocalizations.of(context)!.navigation_link_contact)),
         ],
       ),
       body: body,

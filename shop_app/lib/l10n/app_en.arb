@@ -1,0 +1,18 @@
+{
+    "navigation_link_shop": "Shop",
+    "navigation_link_contact": "Contact",
+    
+    "shop_home_deals_title": "Deals",
+    "shop_home_recommended_title": "Recommended",
+    "shop_home_search": "Search",
+
+    "contact_screen_title": "Contact us",
+    "contact_screen_send_message": "Send a message",
+    "contact_message_form_name_default": "Name",
+    "contact_message_form_email_default": "Email",
+    "contact_message_form_message_default": "Message",
+    "contact_message_form_submit": "Send",
+    "contact_message_form_validation_name": "Please enter your name",
+    "contact_message_form_validation_email": "Please enter your email",
+    "contact_message_form_validation_message": "Please enter a message"
+}

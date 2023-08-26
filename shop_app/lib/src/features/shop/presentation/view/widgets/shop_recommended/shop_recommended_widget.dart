@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/custom_imports/app_localizations.dart';
 import 'package:shop_app/src/features/shop/domain/entities/shop_item_entity.dart';
 import 'package:shop_app/src/features/shop/presentation/view/widgets/shop_recommended/shop_recommended_list.dart';
 
@@ -15,7 +16,7 @@ class ShopRecommendedWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Aanbevolen",
+            AppLocalizations.of(context)!.shop_home_recommended_title,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 16.0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/custom_imports/app_localizations.dart';
 
 class ContactMessageForm extends StatelessWidget {
   ContactMessageForm({super.key});
@@ -25,38 +26,51 @@ class ContactMessageForm extends StatelessWidget {
                 TextFormField(
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Please enter your name";
+                      return AppLocalizations.of(context)!
+                          .contact_message_form_validation_name;
                     }
                     return null;
                   },
                   keyboardType: TextInputType.name,
-                  decoration: _defaultInputDecoration("Naam"),
+                  textInputAction: TextInputAction.next,
+                  decoration: _defaultInputDecoration(
+                      AppLocalizations.of(context)!
+                          .contact_message_form_name_default),
                 ),
                 TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Please enter your email";
+                        return AppLocalizations.of(context)!
+                            .contact_message_form_validation_email;
                       }
                       return null;
                     },
                     keyboardType: TextInputType.emailAddress,
-                    decoration: _defaultInputDecoration("E-mail")),
+                    textInputAction: TextInputAction.next,
+                    decoration: _defaultInputDecoration(
+                        AppLocalizations.of(context)!
+                            .contact_message_form_email_default)),
                 TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Please enter a message";
+                        return AppLocalizations.of(context)!
+                            .contact_message_form_validation_message;
                       }
                       return null;
                     },
                     keyboardType: TextInputType.text,
-                    decoration: _defaultInputDecoration("Bericht")),
+                    textInputAction: TextInputAction.done,
+                    decoration: _defaultInputDecoration(
+                        AppLocalizations.of(context)!
+                            .contact_message_form_message_default)),
                 ElevatedButton(
                   onPressed: () {
                     bool? result = _formKey.currentState?.validate();
 
                     if (result == null) {}
                   },
-                  child: const Text("Verzend"),
+                  child: Text(AppLocalizations.of(context)!
+                      .contact_message_form_submit),
                 )
               ],
             ),

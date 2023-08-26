@@ -1,0 +1,18 @@
+{
+    "navigation_link_shop": "Winkel",
+    "navigation_link_contact": "Contact",
+    
+    "shop_home_deals_title": "Aanbiedingen",
+    "shop_home_recommended_title": "Aanbevolen",
+    "shop_home_search": "Zoeken",
+
+    "contact_screen_title": "Neem contact op",
+    "contact_screen_send_message": "Stuur een bericht",
+    "contact_message_form_name_default": "Naam",
+    "contact_message_form_email_default": "E-mail",
+    "contact_message_form_message_default": "Bericht",
+    "contact_message_form_submit": "Verzend",
+    "contact_message_form_validation_name": "Vul uw naam in",
+    "contact_message_form_validation_email": "Vul uw e-mail in",
+    "contact_message_form_validation_message": "Type een bericht"
+}
