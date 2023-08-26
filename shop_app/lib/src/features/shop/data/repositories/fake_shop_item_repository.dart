@@ -7,6 +7,7 @@ import 'package:shop_app/src/features/shop/domain/repositories/shop_item_reposit
 class FakeShopItemRepository extends ShopItemRepository {
   @override
   Future<List<ShopItemEntity>> getShopItems() async {
+    await Future.delayed(const Duration(seconds: 2));
     List<ShopItemDTO> dtos = FakeShopItemsDatasource().getShopItems();
     ShopItemDTOConverter converter = ShopItemDTOConverter();
     return dtos.map((e) => converter.convert(e)).toList();

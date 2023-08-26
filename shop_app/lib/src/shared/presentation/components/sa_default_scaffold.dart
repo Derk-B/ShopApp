@@ -32,20 +32,16 @@ class SADefaultScaffold extends StatelessWidget {
       drawer: NavigationDrawer(children: [
         TextButton(
             onPressed: () {
-              while (Navigator.of(context).canPop()) {
-                Navigator.of(context).pop();
-              }
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              Navigator.of(context)
+                  .pushReplacement(MaterialPageRoute(builder: (context) {
                 return const ShopHomeScreen();
               }));
             },
-            child: const Text("Home")),
+            child: const Text("Shop")),
         TextButton(
             onPressed: () {
-              while (Navigator.of(context).canPop()) {
-                Navigator.of(context).pop();
-              }
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              Navigator.of(context)
+                  .pushReplacement(MaterialPageRoute(builder: (context) {
                 return const ContactScreen();
               }));
             },
