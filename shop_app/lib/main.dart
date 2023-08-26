@@ -15,8 +15,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'ShopApp',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
+        textButtonTheme: TextButtonThemeData(
+          style: const ButtonStyle().copyWith(
+            foregroundColor: const MaterialStatePropertyAll(Colors.black87),
+            overlayColor: const MaterialStatePropertyAll(Colors.black12),
+          ),
+        ),
         iconButtonTheme: IconButtonThemeData(
             style: const ButtonStyle().copyWith(
                 shape: MaterialStatePropertyAll(RoundedRectangleBorder(
@@ -32,6 +38,19 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.blueGrey[50],
             surfaceTintColor: Colors.transparent,
             foregroundColor: Colors.transparent),
+        textSelectionTheme:
+            const TextSelectionThemeData(cursorColor: Colors.black),
+        inputDecorationTheme: const InputDecorationTheme(
+            enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.black87)),
+            focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.black87))),
+        elevatedButtonTheme: const ElevatedButtonThemeData(
+          style: ButtonStyle(
+              overlayColor: MaterialStatePropertyAll(Colors.black12),
+              foregroundColor: MaterialStatePropertyAll(Colors.black87)),
+        ),
+        buttonTheme: const ButtonThemeData(buttonColor: Colors.black87),
       ),
       home: const ShopHomeScreen(),
     );

@@ -29,24 +29,34 @@ class SADefaultScaffold extends StatelessWidget {
           },
         ),
       ),
-      drawer: NavigationDrawer(children: [
-        TextButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .pushReplacement(MaterialPageRoute(builder: (context) {
-                return const ShopHomeScreen();
-              }));
-            },
-            child: const Text("Shop")),
-        TextButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .pushReplacement(MaterialPageRoute(builder: (context) {
-                return const ContactScreen();
-              }));
-            },
-            child: const Text("Contact")),
-      ]),
+      drawer: NavigationDrawer(
+        children: [
+          Image.asset("lib/assets/chair.jpg"),
+          const SizedBox(height: 4.0),
+          Text(
+            "ShopApp by Derk Blom",
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          const Divider(),
+          TextButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .pushReplacement(MaterialPageRoute(builder: (context) {
+                  return const ShopHomeScreen();
+                }));
+              },
+              child: const Text("Shop")),
+          TextButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .pushReplacement(MaterialPageRoute(builder: (context) {
+                  return const ContactScreen();
+                }));
+              },
+              child: const Text("Contact")),
+        ],
+      ),
       body: body,
     );
   }
