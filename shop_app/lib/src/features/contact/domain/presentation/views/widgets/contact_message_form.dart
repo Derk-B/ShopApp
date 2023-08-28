@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:shop_app/custom_imports/app_localizations.dart';
 
@@ -64,10 +67,14 @@ class ContactMessageForm extends StatelessWidget {
                         AppLocalizations.of(context)!
                             .contact_message_form_message_default)),
                 ElevatedButton(
-                  onPressed: () {
-                    bool? result = _formKey.currentState?.validate();
-
-                    if (result == null) {}
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      var url = Uri.http("localhost:8081", "/");
+                      var response =
+                          await http.post(url, body: {'email': "some-email"});
+                      print('Response body: ${response.body}');
+                      print('Response status: ${response.statusCode}');
+                    }
                   },
                   child: Text(AppLocalizations.of(context)!
                       .contact_message_form_submit),
