@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/custom_imports/app_localizations.dart';
-import 'package:shop_app/src/features/contact/domain/presentation/views/widgets/contact_message_form.dart';
-import 'package:shop_app/src/features/contact/domain/presentation/views/widgets/contact_options_list.dart';
+import 'package:shop_app/src/features/contact/presentation/views/widgets/contact_message_form.dart';
+import 'package:shop_app/src/features/contact/presentation/views/widgets/contact_options_list.dart';
 import 'package:shop_app/src/shared/presentation/components/sa_default_scaffold.dart';
 
 class ContactScreen extends StatelessWidget {

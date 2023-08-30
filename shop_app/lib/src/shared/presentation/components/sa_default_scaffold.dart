@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/custom_imports/app_localizations.dart';
-import 'package:shop_app/src/features/contact/domain/presentation/views/contact_screen.dart';
+import 'package:shop_app/src/features/contact/presentation/views/contact_screen.dart';
 import 'package:shop_app/src/features/shop/presentation/view/shop_home_screen.dart';
 
 class SADefaultScaffold extends StatelessWidget {

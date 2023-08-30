@@ -5,4 +5,7 @@ abstract class ShopHomeScreenEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadShopHomeScreen extends ShopHomeScreenEvent {}
+class LoadShopHomeScreen extends ShopHomeScreenEvent {
+  @override
+  List<Object> get props => [];
+}

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/src/features/contact/domain/presentation/views/widgets/contact_option.dart';
+import 'package:shop_app/src/features/contact/presentation/views/widgets/contact_option.dart';
 
 class ContactOptionsList extends StatelessWidget {
   const ContactOptionsList({super.key});
