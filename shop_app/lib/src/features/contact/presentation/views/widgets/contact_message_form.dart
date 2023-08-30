@@ -1,13 +1,17 @@
-import 'dart:io';
-
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:shop_app/custom_imports/app_localizations.dart';
+import 'package:shop_app/src/features/contact/domain/entities/contact_message_entity.dart';
+import 'package:shop_app/src/features/contact/domain/usecases/send_message.dart';
+import 'package:shop_app/src/shared/domain/usecases/usecase.dart';
 
 class ContactMessageForm extends StatelessWidget {
   ContactMessageForm({super.key});
 
   final _formKey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final nameController = TextEditingController();
+  final messageController = TextEditingController();
 
   InputDecoration _defaultInputDecoration(String hintText) {
     return InputDecoration(
@@ -34,6 +38,7 @@ class ContactMessageForm extends StatelessWidget {
                     }
                     return null;
                   },
+                  controller: nameController,
                   keyboardType: TextInputType.name,
                   textInputAction: TextInputAction.next,
                   decoration: _defaultInputDecoration(
@@ -48,6 +53,7 @@ class ContactMessageForm extends StatelessWidget {
                       }
                       return null;
                     },
+                    controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     decoration: _defaultInputDecoration(
@@ -61,6 +67,7 @@ class ContactMessageForm extends StatelessWidget {
                       }
                       return null;
                     },
+                    controller: messageController,
                     keyboardType: TextInputType.text,
                     textInputAction: TextInputAction.done,
                     decoration: _defaultInputDecoration(
@@ -69,11 +76,13 @@ class ContactMessageForm extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
-                      var url = Uri.http("localhost:8081", "/");
-                      var response =
-                          await http.post(url, body: {'email': "some-email"});
-                      print('Response body: ${response.body}');
-                      print('Response status: ${response.statusCode}');
+                      ContactMessageEntity entity = ContactMessageEntity(
+                        nameController.value.text,
+                        emailController.value.text,
+                        messageController.value.text,
+                      );
+
+                      SendMessage(entity).call();
                     }
                   },
                   child: Text(AppLocalizations.of(context)!

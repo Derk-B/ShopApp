@@ -31,5 +31,6 @@ class ContactMessageService {
     } on Exception catch (e) {
       return e;
     }
+    return null;
   }
 }
