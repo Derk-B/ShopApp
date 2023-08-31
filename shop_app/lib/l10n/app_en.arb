@@ -14,5 +14,7 @@
     "contact_message_form_submit": "Send",
     "contact_message_form_validation_name": "Please enter your name",
     "contact_message_form_validation_email": "Please enter your email",
-    "contact_message_form_validation_message": "Please enter a message"
+    "contact_message_form_validation_message": "Please enter a message",
+    "contact_message_form_status_success": "Successfully sent message\nWe will reply to your message via email.",
+    "contact_message_form_status_error": "Error while sending message\nTry again later or contact us directly by email or phone"
 }

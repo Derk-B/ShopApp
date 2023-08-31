@@ -8,17 +8,25 @@ part 'message_form_state.dart';
 
 class MessageFormBloc extends Bloc<MessageFormEvent, MessageFormState> {
   MessageFormBloc() : super(MessageFormEditing()) {
-    on<MessageFormSend>((event, emit) {
+    on<MessageFormSend>((event, emit) async {
       Future<int> statusFromFuture = SendMessage(event.entity).call();
 
-      emit(MessageFormSubmitting(statusFromFuture));
+      emit(MessageFormSubmitting());
+
+      int statusResult = await statusFromFuture;
+      const int successStatus = 200;
+      if (statusResult == successStatus) {
+        emit(MessageFormSuccess());
+      } else {
+        emit(MessageFormError());
+      }
+
+      await Future.delayed(const Duration(seconds: 5));
+
+      emit(MessageFormEditing());
     });
-    on<MessageFormReceiveStatus>((event, emit)) {
-        if ( == 200){
-          emit(MessageFormSuccess());
-        } else {
-          emit(MessageFormError());
-        }
-    }
+    on<MessageFormEdit>((event, emit) {
+      emit(MessageFormEditing());
+    });
   }
 }

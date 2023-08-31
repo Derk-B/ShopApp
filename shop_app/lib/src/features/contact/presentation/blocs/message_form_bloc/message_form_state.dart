@@ -7,26 +7,10 @@ abstract class MessageFormState extends Equatable {
   List<Object> get props => [];
 }
 
-final class MessageFormEditing extends MessageFormState {
-  @override
-  List<Object> get props => [];
-}
+final class MessageFormEditing extends MessageFormState {}
 
-final class MessageFormSubmitting extends MessageFormState {
-  final Future<int> statusFromFuture;
+final class MessageFormSubmitting extends MessageFormState {}
 
-  const MessageFormSubmitting(this.statusFromFuture);
+final class MessageFormError extends MessageFormState {}
 
-  @override
-  List<Object> get props => [];
-}
-
-final class MessageFormError extends MessageFormState {
-  @override
-  List<Object> get props => [];
-}
-
-final class MessageFormSuccess extends MessageFormState {
-  @override
-  List<Object> get props => [];
-}
+final class MessageFormSuccess extends MessageFormState {}

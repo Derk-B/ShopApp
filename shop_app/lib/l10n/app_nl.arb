@@ -14,5 +14,7 @@
     "contact_message_form_submit": "Verzend",
     "contact_message_form_validation_name": "Vul uw naam in",
     "contact_message_form_validation_email": "Vul uw e-mail in",
-    "contact_message_form_validation_message": "Type een bericht"
+    "contact_message_form_validation_message": "Type een bericht",
+    "contact_message_form_status_success": "",
+    "contact_message_form_status_error": "Bericht verzenden mislukt.\nProbeer later opnieuw of neem contact op via telefoon of e-mail."
 }

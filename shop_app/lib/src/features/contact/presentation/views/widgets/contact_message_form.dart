@@ -1,9 +1,8 @@
-import 'package:http/http.dart' as http;
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_app/custom_imports/app_localizations.dart';
 import 'package:shop_app/src/features/contact/domain/entities/contact_message_entity.dart';
-import 'package:shop_app/src/features/contact/domain/usecases/send_message.dart';
-import 'package:shop_app/src/shared/domain/usecases/usecase.dart';
+import 'package:shop_app/src/features/contact/presentation/blocs/message_form_bloc/message_form_bloc.dart';
 
 class ContactMessageForm extends StatelessWidget {
   ContactMessageForm({super.key});
@@ -82,7 +81,9 @@ class ContactMessageForm extends StatelessWidget {
                         messageController.value.text,
                       );
 
-                      SendMessage(entity).call();
+                      context
+                          .read<MessageFormBloc>()
+                          .add(MessageFormSend(entity));
                     }
                   },
                   child: Text(AppLocalizations.of(context)!

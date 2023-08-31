@@ -5,20 +5,16 @@ abstract class MessageFormEvent extends Equatable {
   List<Object> get props => [];
 }
 
+class MessageFormEdit extends MessageFormEvent {
+  @override
+  List<Object> get props => [];
+}
+
 class MessageFormSend extends MessageFormEvent {
   final ContactMessageEntity entity;
 
   MessageFormSend(this.entity);
 
   @override
-  List<Object> get props => [];
-}
-
-class MessageFormReceiveStatus extends MessageFormEvent {
-  final int status;
-
-  MessageFormReceiveStatus(this.status);
-
-  @override
-  List<Object> get props => [];
+  List<Object> get props => [entity];
 }
