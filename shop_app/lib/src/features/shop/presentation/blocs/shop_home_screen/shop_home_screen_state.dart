@@ -10,12 +10,14 @@ abstract class ShopHomeScreenState extends Equatable {
 final class ShopHomeScreenLoading extends ShopHomeScreenState {}
 
 final class ShopHomeScreenLoaded extends ShopHomeScreenState {
-  final List<ShopItemEntity> shopItems;
+  final List<ShopItemEntity> deals;
+  final List<ShopItemEntity> recommendedProducts;
 
-  const ShopHomeScreenLoaded({required this.shopItems});
+  const ShopHomeScreenLoaded(
+      {required this.deals, required this.recommendedProducts});
 
   @override
-  List<Object> get props => [shopItems];
+  List<Object> get props => [deals, recommendedProducts];
 }
 
 final class ShopHomeScreenError extends ShopHomeScreenState {}

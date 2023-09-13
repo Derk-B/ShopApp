@@ -77,8 +77,8 @@ class ShopHomeScreenWidget extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  ShopDealsWidget(items: state.shopItems),
-                  ShopRecommendedWidget(items: state.shopItems),
+                  ShopDealsWidget(items: state.deals),
+                  ShopRecommendedWidget(items: state.recommendedProducts),
                 ],
               ),
             ),

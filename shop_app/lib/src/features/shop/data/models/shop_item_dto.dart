@@ -10,4 +10,12 @@ class ShopItemDTO {
     required this.description,
     required this.price,
   });
+
+  static ShopItemDTO fromJson(json) {
+    return ShopItemDTO(
+        id: json["id"],
+        title: json["title"],
+        description: json["description"],
+        price: json["price"]);
+  }
 }
