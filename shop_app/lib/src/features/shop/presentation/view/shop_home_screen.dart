@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/custom_imports/app_localizations.dart';
 import 'package:shop_app/src/features/shop/presentation/blocs/shop_home_screen/shop_home_screen_bloc.dart';
+import 'package:shop_app/src/features/shop/presentation/view/shop_cart_screen.dart';
 import 'package:shop_app/src/features/shop/presentation/view/widgets/shop_deals/shop_deals_widget.dart';
 import 'package:shop_app/src/features/shop/presentation/view/widgets/shop_recommended/shop_recommended_widget.dart';
 import 'package:shop_app/src/shared/presentation/components/sa_default_scaffold.dart';
@@ -64,7 +65,10 @@ class ShopHomeScreenWidget extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ShopCartcreen()));
+                },
                 icon: const Icon(Icons.shopping_cart_outlined),
                 style: const ButtonStyle(
                     iconColor: MaterialStatePropertyAll(Colors.black),
