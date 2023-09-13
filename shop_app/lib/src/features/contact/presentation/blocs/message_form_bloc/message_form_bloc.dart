@@ -21,7 +21,7 @@ class MessageFormBloc extends Bloc<MessageFormEvent, MessageFormState> {
         emit(MessageFormError());
       }
 
-      await Future.delayed(const Duration(seconds: 5));
+      await Future.delayed(const Duration(seconds: 1));
 
       emit(MessageFormEditing());
     });
