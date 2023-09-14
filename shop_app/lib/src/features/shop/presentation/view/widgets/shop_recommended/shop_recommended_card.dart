@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/src/features/shop/domain/entities/shop_item_entity.dart';
+import 'package:shop_app/src/features/shop/presentation/view/shop_product_screen.dart';
 
 class ShopRecommendedCard extends StatelessWidget {
   final ShopItemEntity item;
@@ -45,7 +46,11 @@ class ShopRecommendedCard extends StatelessWidget {
                         height: 35,
                         width: 35,
                         child: IconButton.filled(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    ShopProductScreen(product: item)));
+                          },
                           icon: const Icon(
                             Icons.arrow_forward,
                             size: 20,
