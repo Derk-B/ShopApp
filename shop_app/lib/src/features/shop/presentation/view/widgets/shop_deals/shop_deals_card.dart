@@ -45,7 +45,8 @@ class ShopDealsCard extends StatelessWidget {
                     child: IconButton.filled(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const ShopProductScreen()));
+                            builder: (context) =>
+                                ShopProductScreen(product: item)));
                       },
                       icon: const Icon(
                         Icons.arrow_forward,

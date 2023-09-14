@@ -1,52 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/custom_imports/app_localizations.dart';
+import 'package:shop_app/src/features/shop/domain/entities/shop_item_entity.dart';
+import 'package:shop_app/src/features/shop/presentation/view/widgets/shop_product/shop_product_header.dart';
+import 'package:shop_app/src/features/shop/presentation/view/widgets/shop_product/shop_product_image.dart';
 import 'package:shop_app/src/shared/presentation/components/sa_default_scaffold.dart';
-import 'package:shop_app/src/shared/presentation/components/sa_searchbar.dart';
 
-class ShopProductScreen extends StatefulWidget {
-  const ShopProductScreen({super.key});
+class ShopProductScreen extends StatelessWidget {
+  final ShopItemEntity product;
+  const ShopProductScreen({super.key, required this.product});
 
-  @override
-  State<ShopProductScreen> createState() => _ShopProductScreenState();
-}
-
-class _ShopProductScreenState extends State<ShopProductScreen> {
   @override
   Widget build(BuildContext context) {
     return SADefaultScaffold(
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Flexible(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: SASeachbar(
-                    hint: AppLocalizations.of(context)!.shop_home_search,
-                  ),
+      body: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ShopProductHeader(title: product.title, price: product.price),
+            const ShopProductImage("/chair.jpg"),
+            const SizedBox(height: 16.0),
+            Row(
+              children: [
+                Text(
+                  "Description",
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.shopping_cart_outlined),
-                style: const ButtonStyle(
-                    iconColor: MaterialStatePropertyAll(Colors.black),
-                    backgroundColor:
-                        MaterialStatePropertyAll(Colors.transparent)),
-              )
-            ],
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Text("hallo"),
-                  Text("hallo2"),
-                ],
-              ),
+                const Spacer(),
+                TextButton.icon(
+                    style: const ButtonStyle().copyWith(
+                        shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0))),
+                        padding: const MaterialStatePropertyAll(
+                            EdgeInsets.all(16.0)),
+                        backgroundColor:
+                            const MaterialStatePropertyAll(Colors.black)),
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.add_shopping_cart,
+                      color: Colors.white,
+                    ),
+                    label: const Text(
+                      "Kopen",
+                      style: TextStyle(color: Colors.white),
+                    )),
+              ],
             ),
-          ),
-        ],
+            const SizedBox(height: 8.0),
+            Text(product.description),
+            const SizedBox(height: 16.0),
+          ],
+        ),
       ),
     );
   }
