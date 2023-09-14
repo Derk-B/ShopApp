@@ -20,4 +20,7 @@ final class ShopHomeScreenLoaded extends ShopHomeScreenState {
   List<Object> get props => [deals, recommendedProducts];
 }
 
-final class ShopHomeScreenError extends ShopHomeScreenState {}
+final class ShopHomeScreenError extends ShopHomeScreenState {
+  @override
+  List<Object> get props => [];
+}

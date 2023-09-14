@@ -14,6 +14,10 @@ class ShopHomeScreenBloc
       List<ShopItemEntity> recommendedProducts =
           await GetShopRecommended().call();
 
+      if (deals.isEmpty || recommendedProducts.isEmpty) {
+        return emit(ShopHomeScreenError());
+      }
+
       emit(ShopHomeScreenLoaded(
           deals: deals, recommendedProducts: recommendedProducts));
     });
