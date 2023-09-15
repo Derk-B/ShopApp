@@ -9,8 +9,9 @@ class ShopCartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
       itemCount: items.length,
-      itemBuilder: (context, index) => ShopCartCard(items[index]),
+      itemBuilder: (context, index) => ShopCartCard(items[index], amount: 1),
     );
   }
 }

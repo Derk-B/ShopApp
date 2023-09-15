@@ -3,12 +3,12 @@ import 'package:shop_app/src/features/shop/data/models/shop_item_dto.dart';
 
 class ShopCartCard extends StatelessWidget {
   final ShopItemDTO item;
-  const ShopCartCard(this.item, {super.key});
+  final int amount;
+  const ShopCartCard(this.item, {super.key, required this.amount});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue,
       padding: const EdgeInsets.all(8.0),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         SizedBox(
@@ -19,22 +19,21 @@ class ShopCartCard extends StatelessWidget {
         ),
         const SizedBox(width: 8.0),
         Expanded(
-          child: Container(
-            color: Colors.red,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  item.title,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                const Spacer(),
-                Text(item.price.toString()),
-              ],
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                item.title,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 8.0),
+              Text(item.price.toString()),
+              Text("$amount pieces"),
+            ],
           ),
         ),
+        IconButton(onPressed: () {}, icon: const Icon(Icons.delete))
       ]),
     );
   }

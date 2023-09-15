@@ -8,6 +8,8 @@ class ShopProductsDatasource {
 
     db.dispose();
 
+    print(result.rows.length);
+
     return result;
   }
 }

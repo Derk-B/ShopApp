@@ -10,7 +10,9 @@ import 'package:shop_app/src/features/shop/data/models/shop_item_dto.dart';
 class ShopDealsDatasource {
   Future<List<ShopItemDTO>> getShopItems() async {
     Response data = await http
-        .get(Uri.parse("http://localhost:8081/shop/deals"), headers: {
+        .get(Uri.http("localhost:8081", "/shop/deals"), headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Accept":"*/*",
       'Content-Type': "application/json; charset=UTF-8"
     }).onError((error, stackTrace) {
       return Response("", HttpStatus.connectionClosedWithoutResponse);
